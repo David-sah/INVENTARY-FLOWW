@@ -1,10 +1,40 @@
 <?php
-    $lang["t-compras"]="Compras";
-    $lang["t-ventas"]="Ventas";
-    $lang["t-proveedor"]="Proveedores";
-    $lang["t-sucursal"]="Sucursales";
-    $lang["t-producto"]="Productos";
-    $lang["t-empleado"]="Empleados";
+//Agregadas por Alejandro Romero 11:42 PM 03/28/2022 (mm/dd/YYYY)
+    $lang["t-WebApps"] = "Web Apps";
+    $lang["t-ViewAllApps"] = "View All Apps";
+    $lang["t-Index"] = "Dashboard";
+    $lang["t-Dashboard"] = "DASHBOARD";
+    $lang["t-ListBuys"] = "Shopping List";
+    $lang["t-Add"] = "Add";
+    $lang["t-Print"] = "Print";
+    $lang["t-search"] = "Search...";
+    $lang["t-Customer"] = "Customer";
+    $lang["t-Email"] = "Email";
+    $lang["t-Phone"] = "Phone";
+    $lang["t-JoiningDate"] = "Joining Date";
+    $lang["t-DeliveryStatus"] = "Delivery Status";
+    $lang["t-Action"] = "Action";
+    $lang["t-Edit"] = "Edit";
+    $lang["t-Remove"] = "Remove";
+    $lang["t-Active"] = "Active";
+    $lang["t-Block"] = "Block";
+    $lang["t-Previous"] = "Previous";
+    $lang["t-Next"] = "Next";
+
+    $lang["t-SellList"] = "Sale List";
+    $lang["t-ListOfSuppliers"] = "List Of Suppliers";
+    $lang["t-BranchList"] = "Branch List";
+    $lang["t-ListOfProducts"] = "List Of Products";
+    $lang["t-ListOfEmployees"] = "List Of Employees";
+
+//Fin Agregadas por Alejandro Romero 11:42 PM 03/28/2022 (mm/dd/YYYY)
+
+    $lang["t-compras"]="Buy";
+    $lang["t-ventas"]="Sell";
+    $lang["t-proveedor"]="Supplier";
+    $lang["t-sucursal"]="Branch Office";
+    $lang["t-producto"]="Product";
+    $lang["t-empleado"]="Employees";
     
     $lang["t-menu"]="Menu";
     $lang["t-dashboards"]="Dashboards";

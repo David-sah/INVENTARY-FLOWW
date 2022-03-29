@@ -7,7 +7,7 @@ Contact: Themesbrand@gmail.com
 File: Main Js File
 */
 
-(function () {
+(function() {
 
     'use strict';
 
@@ -24,8 +24,8 @@ File: Main Js File
         if (language != "null" && language !== default_lang)
             setLanguage(language);
         var languages = document.getElementsByClassName("language");
-        languages && languages.forEach(function (dropdown) {
-            dropdown.addEventListener('click', function (event) {
+        languages && languages.forEach(function(dropdown) {
+            dropdown.addEventListener('click', function(event) {
                 setLanguage(dropdown.getAttribute('data-lang'));
             });
         });
@@ -37,16 +37,6 @@ File: Main Js File
                 document.getElementById("header-lang-img").src = "assets/images/flags/us.svg";
             } else if (lang == 'sp') {
                 document.getElementById("header-lang-img").src = "assets/images/flags/spain.svg";
-            } else if (lang == 'gr') {
-                document.getElementById("header-lang-img").src = "assets/images/flags/germany.svg";
-            } else if (lang == 'it') {
-                document.getElementById("header-lang-img").src = "assets/images/flags/italy.svg";
-            } else if (lang == 'ru') {
-                document.getElementById("header-lang-img").src = "assets/images/flags/russia.svg";
-            }else if (lang == 'ch') {
-                document.getElementById("header-lang-img").src = "assets/images/flags/china.svg";
-            }else if (lang == 'fr') {
-                document.getElementById("header-lang-img").src = "assets/images/flags/french.svg";
             }
             localStorage.setItem('language', lang);
             language = localStorage.getItem('language');
@@ -61,13 +51,13 @@ File: Main Js File
         // Instantiating the request object
         request.open("GET", 'assets/lang/' + language + '.json');
         // Defining event listener for readystatechange event
-        request.onreadystatechange = function () {
+        request.onreadystatechange = function() {
             // Check if the request is compete and was successful
             if (this.readyState === 4 && this.status === 200) {
                 var data = JSON.parse(this.responseText);
-                Object.keys(data).forEach(function (key) {
+                Object.keys(data).forEach(function(key) {
                     var elements = document.querySelectorAll("[data-key='" + key + "']");
-                    elements.forEach(function (elem) {
+                    elements.forEach(function(elem) {
                         elem.textContent = data[key];
                     })
                 });
@@ -85,8 +75,8 @@ File: Main Js File
          * Toast UI Notification
          */
         var toastExamples = document.querySelectorAll("[data-toast]");
-        toastExamples.forEach(function (element) {
-            element.addEventListener("click", function () {
+        toastExamples.forEach(function(element) {
+            element.addEventListener("click", function() {
                 var toastData = {};
                 var isToastVal = element.attributes;
                 if (isToastVal["data-toast-text"]) {
@@ -137,7 +127,7 @@ File: Main Js File
          * Choices Select plugin
          */
         var choicesExamples = document.querySelectorAll("[data-choices]");
-        choicesExamples.forEach(function (item) {
+        choicesExamples.forEach(function(item) {
             var choiceData = {};
             var isChoicesVal = item.attributes;
             if (isChoicesVal["data-choices-groups"]) {
@@ -194,7 +184,7 @@ File: Main Js File
          * flatpickr
          */
         var flatpickrExamples = document.querySelectorAll("[data-provider]");
-        flatpickrExamples.forEach(function (item) {
+        flatpickrExamples.forEach(function(item) {
             if (item.getAttribute("data-provider") == "flatpickr") {
                 var dateData = {};
                 var isFlatpickerVal = item.attributes;
@@ -283,8 +273,8 @@ File: Main Js File
         });
 
         // Dropdown
-        document.querySelectorAll('.dropdown-menu a[data-bs-toggle="tab"]').forEach(function (element) {
-            element.addEventListener('click', function (e) {
+        document.querySelectorAll('.dropdown-menu a[data-bs-toggle="tab"]').forEach(function(element) {
+            element.addEventListener('click', function(e) {
                 e.stopPropagation();
                 bootstrap.Tab.getInstance(e.target).show();
             });
@@ -298,18 +288,18 @@ File: Main Js File
          */
         if (document.querySelectorAll('.navbar-nav .collapse')) {
             var collapses = document.querySelectorAll('.navbar-nav .collapse');
-            collapses.forEach(function (collapse) {
+            collapses.forEach(function(collapse) {
                 // Init collapses
                 var collapseInstance = new bootstrap.Collapse(collapse, {
                     toggle: false
                 });
                 // Hide sibling collapses on `show.bs.collapse`
-                collapse.addEventListener('show.bs.collapse', function (e) {
+                collapse.addEventListener('show.bs.collapse', function(e) {
                     e.stopPropagation();
                     var closestCollapse = collapse.parentElement.closest('.collapse');
                     if (closestCollapse) {
                         var siblingCollapses = closestCollapse.querySelectorAll('.collapse');
-                        siblingCollapses.forEach(function (siblingCollapse) {
+                        siblingCollapses.forEach(function(siblingCollapse) {
                             var siblingCollapseInstance = bootstrap.Collapse.getInstance(siblingCollapse);
                             if (siblingCollapseInstance === collapseInstance) {
                                 return;
@@ -317,7 +307,7 @@ File: Main Js File
                             siblingCollapseInstance.hide();
                         });
                     } else {
-                        var getSiblings = function (elem) {
+                        var getSiblings = function(elem) {
                             // Setup siblings array and get the first sibling
                             var siblings = [];
                             var sibling = elem.parentNode.firstChild;
@@ -331,16 +321,16 @@ File: Main Js File
                             return siblings;
                         };
                         var siblings = getSiblings(collapse.parentElement);
-                        siblings.forEach(function (item) {
+                        siblings.forEach(function(item) {
                             if (item.childNodes.length > 2)
                                 item.firstElementChild.setAttribute('aria-expanded', 'false');
                             var ids = item.querySelectorAll('*[id]');
-                            ids.forEach(function (item1) {
+                            ids.forEach(function(item1) {
                                 item1.classList.remove('show');
                                 if (item1.childNodes.length > 2) {
                                     var val = item1.querySelectorAll('ul li a');
 
-                                    val.forEach(function (subitem) {
+                                    val.forEach(function(subitem) {
                                         if (subitem.hasAttribute('aria-expanded'))
                                             subitem.setAttribute('aria-expanded', 'false');
                                     });
@@ -351,10 +341,10 @@ File: Main Js File
                 });
 
                 // Hide nested collapses on `hide.bs.collapse`
-                collapse.addEventListener('hide.bs.collapse', function (e) {
+                collapse.addEventListener('hide.bs.collapse', function(e) {
                     e.stopPropagation();
                     var childCollapses = collapse.querySelectorAll('.collapse');
-                    childCollapses.forEach(function (childCollapse) {
+                    childCollapses.forEach(function(childCollapse) {
                         childCollapseInstance = bootstrap.Collapse.getInstance(childCollapse);
                         childCollapseInstance.hide();
                     });
@@ -376,11 +366,11 @@ File: Main Js File
 
             var ul = document.createElement("ul");
             ul.innerHTML = '<a href="#" class="logo"><img src="assets/images/logo-sm.png" alt="" height="22"></a>';
-            document.getElementById("navbar-nav").querySelectorAll(".menu-link").forEach(function (item) {
+            document.getElementById("navbar-nav").querySelectorAll(".menu-link").forEach(function(item) {
                 ul.className = "twocolumn-iconview";
                 var li = document.createElement("li");
                 var a = item; //document.createElement("a");
-                a.querySelectorAll('span').forEach(function (element) {
+                a.querySelectorAll('span').forEach(function(element) {
                     element.classList.add('d-none');
                 });
 
@@ -418,10 +408,10 @@ File: Main Js File
             document.getElementById("two-column-menu").innerHTML = ul.outerHTML;
 
             // show submenu on sidebar menu click
-            document.querySelector("#two-column-menu ul").querySelectorAll("li a").forEach(function (element) {                
+            document.querySelector("#two-column-menu ul").querySelectorAll("li a").forEach(function(element) {
                 var currentPath = location.pathname == "/" ? "index.php" : location.pathname.substring(1);
-                    currentPath = currentPath.substring(currentPath.lastIndexOf('/') + 1);
-                element.addEventListener("click", function (e) {
+                currentPath = currentPath.substring(currentPath.lastIndexOf('/') + 1);
+                element.addEventListener("click", function(e) {
                     if (!(currentPath == '/' + element.getAttribute("href") && !element.getAttribute("data-bs-toggle")))
                         (document.body.classList.contains("twocolumn-panel")) ? document.body.classList.remove("twocolumn-panel") : "";
                     document.getElementById("navbar-nav").classList.remove('twocolumn-nav-hide');
@@ -438,7 +428,7 @@ File: Main Js File
 
                         var currentMenu = (e.target.matches("i")) ? e.target.closest('a') : e.target;
                         var childMenusId = currentMenu.getAttribute('href').slice(1);
-                        if(document.getElementById(childMenusId))
+                        if (document.getElementById(childMenusId))
                             document.getElementById(childMenusId).parentElement.classList.add('twocolumn-item-show');
                     }
                 });
@@ -452,13 +442,13 @@ File: Main Js File
             });
 
             var currentLayout = document.documentElement.getAttribute("data-layout");
-            if(currentLayout !== "horizontal") {
+            if (currentLayout !== "horizontal") {
                 var simpleBar = new SimpleBar(document.getElementById("navbar-nav"));
-                if(simpleBar)
+                if (simpleBar)
                     simpleBar.getContentElement();
 
                 var simpleBar1 = new SimpleBar(document.getElementsByClassName("twocolumn-iconview")[0]);
-                if(simpleBar1)
+                if (simpleBar1)
                     simpleBar1.getContentElement();
             }
         }
@@ -471,7 +461,7 @@ File: Main Js File
         var dropdown = document.getElementById("search-dropdown");
         var searchInput = document.getElementById("search-options");
 
-        searchInput.addEventListener("focus", function () {
+        searchInput.addEventListener("focus", function() {
             var inputLength = searchInput.value.length;
             if (inputLength > 0) {
                 dropdown.classList.add("show");
@@ -482,7 +472,7 @@ File: Main Js File
             }
         });
 
-        searchInput.addEventListener("keyup", function () {
+        searchInput.addEventListener("keyup", function() {
             var inputLength = searchInput.value.length;
             if (inputLength > 0) {
                 dropdown.classList.add("show");
@@ -493,13 +483,13 @@ File: Main Js File
             }
         });
 
-        searchOptions.addEventListener("click", function () {
+        searchOptions.addEventListener("click", function() {
             searchInput.value = "";
             dropdown.classList.remove("show");
             searchOptions.classList.add("d-none");
         });
 
-        document.body.addEventListener("click", function (e) {
+        document.body.addEventListener("click", function(e) {
             if (e.target.getAttribute('id') !== "search-options") {
                 dropdown.classList.remove("show");
                 searchOptions.classList.add("d-none");
@@ -563,10 +553,10 @@ File: Main Js File
     function isLoadBodyElement() {
         var verticalOverlay = document.getElementsByClassName("vertical-overlay");
         if (verticalOverlay) {
-            verticalOverlay.forEach(function (element) {
-                element.addEventListener("click", function () {
+            verticalOverlay.forEach(function(element) {
+                element.addEventListener("click", function() {
                     document.body.classList.remove('vertical-sidebar-enable');
-                    if(sessionStorage.getItem("data-layout") == "twocolumn")
+                    if (sessionStorage.getItem("data-layout") == "twocolumn")
                         document.body.classList.add('twocolumn-panel');
                     else
                         document.documentElement.setAttribute("data-sidebar-size", sessionStorage.getItem("data-sidebar-size"))
@@ -579,46 +569,46 @@ File: Main Js File
         var windowSize = document.documentElement.clientWidth;
         if (windowSize < 1025 && windowSize > 767) {
             document.body.classList.remove('twocolumn-panel');
-            if(sessionStorage.getItem("data-layout") == "twocolumn"){
+            if (sessionStorage.getItem("data-layout") == "twocolumn") {
                 document.documentElement.setAttribute("data-layout", "twocolumn");
                 document.getElementById("customizer-layout03").click();
                 twoColumnMenuGenerate();
                 initTwoColumnActiveMenu();
                 isCollapseMenu();
             }
-            if(sessionStorage.getItem("data-layout") == "vertical"){
+            if (sessionStorage.getItem("data-layout") == "vertical") {
                 document.documentElement.setAttribute("data-sidebar-size", "sm");
             }
             document.querySelector(".hamburger-icon").classList.add('open');
         } else if (windowSize >= 1025) {
             document.body.classList.remove('twocolumn-panel');
-            if(sessionStorage.getItem("data-layout") == "twocolumn"){
+            if (sessionStorage.getItem("data-layout") == "twocolumn") {
                 document.documentElement.setAttribute("data-layout", "twocolumn");
                 document.getElementById("customizer-layout03").click();
                 twoColumnMenuGenerate();
                 initTwoColumnActiveMenu();
                 isCollapseMenu();
             }
-            if(sessionStorage.getItem("data-layout") == "vertical"){
+            if (sessionStorage.getItem("data-layout") == "vertical") {
                 document.documentElement.setAttribute("data-sidebar-size", sessionStorage.getItem("data-sidebar-size"));
             }
             document.querySelector(".hamburger-icon").classList.remove('open');
         } else if (windowSize <= 767) {
             document.body.classList.remove('vertical-sidebar-enable');
             document.body.classList.add('twocolumn-panel');
-            if(sessionStorage.getItem("data-layout") == "twocolumn"){
+            if (sessionStorage.getItem("data-layout") == "twocolumn") {
                 document.documentElement.setAttribute("data-layout", "vertical");
                 hideShowLayoutOptions("vertical");
                 isCollapseMenu();
             }
-            if(sessionStorage.getItem("data-layout") != "horizontal"){
+            if (sessionStorage.getItem("data-layout") != "horizontal") {
                 document.documentElement.setAttribute("data-sidebar-size", "lg");
             }
             document.querySelector(".hamburger-icon").classList.add('open');
         }
 
         var isElement = document.querySelectorAll("#navbar-nav > li.nav-item");
-        isElement.forEach(function (item) {
+        isElement.forEach(function(item) {
             item.addEventListener('click', menuItem.bind(this), false);
             item.addEventListener('mouseover', menuItem.bind(this), false);
         });
@@ -630,7 +620,7 @@ File: Main Js File
                 e.target.parentElement.nextElementSibling.classList.add('dropdown-custom-right');
                 e.target.parentElement.parentElement.parentElement.parentElement.classList.add('dropdown-custom-right');
                 var eleChild = e.target.parentElement.nextElementSibling;
-                eleChild.querySelectorAll('.menu-dropdown').forEach(function (item) {
+                eleChild.querySelectorAll('.menu-dropdown').forEach(function(item) {
                     item.classList.add('dropdown-custom-right');
                 });
             } else if (elementInViewport(e.target.parentElement.nextElementSibling) == true) {
@@ -649,7 +639,7 @@ File: Main Js File
 
                 e.target.parentElement.parentElement.parentElement.classList.add('dropdown-custom-right');
                 var eleChild = e.target.nextElementSibling;
-                eleChild.querySelectorAll('.menu-dropdown').forEach(function (item) {
+                eleChild.querySelectorAll('.menu-dropdown').forEach(function(item) {
                     item.classList.add('dropdown-custom-right');
                 });
             } else if (elementInViewport(e.target.nextElementSibling) == true) {
@@ -666,7 +656,7 @@ File: Main Js File
     function toggleHamburgerMenu() {
         var windowSize = document.documentElement.clientWidth;
 
-        if(windowSize > 767)
+        if (windowSize > 767)
             document.querySelector(".hamburger-icon").classList.toggle('open');
 
         //For collapse horizontal menu
@@ -696,10 +686,10 @@ File: Main Js File
 
     function windowLoadContent() {
         // Demo show code
-        document.addEventListener('DOMContentLoaded', function () {
+        document.addEventListener('DOMContentLoaded', function() {
             var checkbox = document.getElementsByClassName("code-switcher");
-            checkbox.forEach(function (check, i) {
-                check.addEventListener('change', function () {
+            checkbox.forEach(function(check, i) {
+                check.addEventListener('change', function() {
                     var card = check.closest('.card');
                     var preview = card.querySelector(".live-preview");
                     var code = card.querySelector(".code-view");
@@ -723,11 +713,11 @@ File: Main Js File
 
         Waves.init();
 
-        document.addEventListener('scroll', function () {
+        document.addEventListener('scroll', function() {
             windowScroll();
         });
 
-        window.addEventListener('load', function () {
+        window.addEventListener('load', function() {
             var isTwoColumn = document.documentElement.getAttribute("data-layout");
             if (isTwoColumn == "twocolumn") {
                 initTwoColumnActiveMenu();
@@ -745,8 +735,8 @@ File: Main Js File
         var windowSize = document.documentElement.clientWidth;
 
         if (defaultValues['data-layout'] == "twocolumn" && windowSize < 767) {
-            document.getElementById("two-column-menu").querySelectorAll("li").forEach(function (item) {
-                item.addEventListener("click", function (e) {
+            document.getElementById("two-column-menu").querySelectorAll("li").forEach(function(item) {
+                item.addEventListener("click", function(e) {
                     document.body.classList.remove('twocolumn-panel');
                 });
             });
@@ -756,9 +746,8 @@ File: Main Js File
     // page topbar class added 
     function windowScroll() {
         var pageTopbar = document.getElementById("page-topbar");
-        (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50 )
-            ? pageTopbar.classList.add("topbar-shadow")
-            : pageTopbar.classList.remove("topbar-shadow");
+        (document.body.scrollTop >= 50 || document.documentElement.scrollTop >= 50) ?
+        pageTopbar.classList.add("topbar-shadow"): pageTopbar.classList.remove("topbar-shadow");
     }
 
     //Menu Activation 
@@ -846,7 +835,7 @@ File: Main Js File
         var tooltipTriggerList = [].slice.call(
             document.querySelectorAll('[data-bs-toggle="tooltip"]')
         );
-        tooltipTriggerList.map(function (tooltipTriggerEl) {
+        tooltipTriggerList.map(function(tooltipTriggerEl) {
             return new bootstrap.Tooltip(tooltipTriggerEl);
         });
 
@@ -854,7 +843,7 @@ File: Main Js File
         var popoverTriggerList = [].slice.call(
             document.querySelectorAll('[data-bs-toggle="popover"]')
         );
-        popoverTriggerList.map(function (popoverTriggerEl) {
+        popoverTriggerList.map(function(popoverTriggerEl) {
             return new bootstrap.Popover(popoverTriggerEl);
         });
     }
@@ -863,7 +852,7 @@ File: Main Js File
     function counter() {
         var counter = document.querySelectorAll('.counter-value');
         var speed = 250; // The lower the slower
-        counter && counter.forEach(function (counter_value) {
+        counter && counter.forEach(function(counter_value) {
             function updateCount() {
                 var target = +counter_value.getAttribute('data-target');
                 var count = +counter_value.innerText;
@@ -900,11 +889,11 @@ File: Main Js File
 
         var splitMenu = horizontalMenuSplit;
         var extraMenuName = "More";
-        var menuData = document.querySelectorAll("ul.navbar-nav > li.nav-item");           
+        var menuData = document.querySelectorAll("ul.navbar-nav > li.nav-item");
         var newMenus = '';
         var splitItem = '';
 
-        menuData.forEach(function (item, index) {
+        menuData.forEach(function(item, index) {
             if (index + 1 === splitMenu) {
                 splitItem = item;
             }
@@ -958,7 +947,7 @@ File: Main Js File
 
     function addEventListenerOnSmHoverMenu() {
         // add listener Sidebar Hover icon on change layout from setting
-        document.getElementById('vertical-hover').addEventListener('click', function () {
+        document.getElementById('vertical-hover').addEventListener('click', function() {
             if (document.documentElement.getAttribute('data-sidebar-size') === 'sm-hover') {
                 document.documentElement.setAttribute('data-sidebar-size', 'sm-hover-active');
             } else if (document.documentElement.getAttribute('data-sidebar-size') === 'sm-hover-active') {
@@ -1201,14 +1190,14 @@ File: Main Js File
                         }
                         break;
                 }
-                default:
+            default:
 
-                    break;
+                break;
         }
     }
 
     function initMenuItemScroll() {
-        setTimeout(function () {
+        setTimeout(function() {
             var sidebarMenu = document.getElementById("navbar-nav");
             if (sidebarMenu) {
                 var activeMenu = sidebarMenu.querySelector('.nav-item .active');
@@ -1216,7 +1205,7 @@ File: Main Js File
                 if (offset > 300) {
                     var verticalMenu = (document.getElementsByClassName("app-menu")) ? document.getElementsByClassName("app-menu")[0] : '';
                     if (verticalMenu && verticalMenu.querySelector(".simplebar-content-wrapper")) {
-                        setTimeout(function () {
+                        setTimeout(function() {
                             (offset == 330) ? verticalMenu.querySelector(".simplebar-content-wrapper").scrollTop = offset + 85: verticalMenu.querySelector(".simplebar-content-wrapper").scrollTop = offset;
                         }, 0);
                     }
@@ -1227,10 +1216,10 @@ File: Main Js File
 
     // add change event listener on right layout setting
     function getElementUsingTagname(ele, val) {
-        document.querySelectorAll('input[name=' + ele + ']').forEach(function (x) {
+        document.querySelectorAll('input[name=' + ele + ']').forEach(function(x) {
             val == x.value ? x.checked = true : x.checked = false;
 
-            x.addEventListener('change', function () {
+            x.addEventListener('change', function() {
                 document.documentElement.setAttribute(ele, x.value);
                 sessionStorage.setItem(ele, x.value);
 
@@ -1267,10 +1256,10 @@ File: Main Js File
     }
 
     function setDefaultAttribute() {
-        if(!sessionStorage.getItem('defaultAttribute')) {
+        if (!sessionStorage.getItem('defaultAttribute')) {
             var attributesValue = document.documentElement.attributes;
             var isLayoutAttributes = {};
-            attributesValue.forEach(function (x) {
+            attributesValue.forEach(function(x) {
                 if (x && x.nodeName && x.nodeName != "undefined") {
                     var nodeKey = x.nodeName;
                     isLayoutAttributes[nodeKey] = x.nodeValue;
@@ -1282,7 +1271,9 @@ File: Main Js File
 
             // open right sidebar on first time load
             var offCanvas = document.querySelector('.btn[data-bs-target="#theme-settings-offcanvas"]');
-            (offCanvas) ? offCanvas.click(): '';
+            //Comentado por por Alejandro Romero 1:33 PM 03/29/2022 (mm/dd/YYYY)
+            //(offCanvas) ? offCanvas.click(): '';
+            //Fin Comentado por por Alejandro Romero 11:33 PM 03/29/2022 (mm/dd/YYYY)
         } else {
             var isLayoutAttributes = {};
             isLayoutAttributes['data-layout'] = sessionStorage.getItem('data-layout');
@@ -1299,11 +1290,10 @@ File: Main Js File
 
     function initFullScreen() {
         var fullscreenBtn = document.querySelector('[data-toggle="fullscreen"]');
-        fullscreenBtn && fullscreenBtn.addEventListener("click", function (e) {
+        fullscreenBtn && fullscreenBtn.addEventListener("click", function(e) {
             e.preventDefault();
             document.body.classList.toggle("fullscreen-enable");
-            if (
-                !document.fullscreenElement &&
+            if (!document.fullscreenElement &&
                 /* alternative standard method */
                 !document.mozFullScreenElement &&
                 !document.webkitFullscreenElement
@@ -1328,14 +1318,13 @@ File: Main Js File
                 }
             }
         });
-        
+
         document.addEventListener("fullscreenchange", exitHandler);
         document.addEventListener("webkitfullscreenchange", exitHandler);
         document.addEventListener("mozfullscreenchange", exitHandler);
 
         function exitHandler() {
-            if (
-                !document.webkitIsFullScreen &&
+            if (!document.webkitIsFullScreen &&
                 !document.mozFullScreen &&
                 !document.msFullscreenElement
             ) {
@@ -1353,17 +1342,16 @@ File: Main Js File
         var html = document.getElementsByTagName("HTML")[0];
         var lightDarkBtn = document.querySelectorAll('.light-dark-mode')
         if (lightDarkBtn && lightDarkBtn.length) {
-            lightDarkBtn[0].addEventListener('click', function (event) {
+            lightDarkBtn[0].addEventListener('click', function(event) {
                 (html.hasAttribute("data-layout-mode") && html.getAttribute("data-layout-mode") == "dark") ?
-                    setLayoutMode('data-layout-mode', 'light', "layout-mode-light", html)
-                    : setLayoutMode('data-layout-mode', 'dark', "layout-mode-dark", html);
+                setLayoutMode('data-layout-mode', 'light', "layout-mode-light", html): setLayoutMode('data-layout-mode', 'dark', "layout-mode-dark", html);
             });
         }
     }
 
     function resetLayout() {
         if (document.getElementById('reset-layout')) {
-            document.getElementById('reset-layout').addEventListener('click', function () {
+            document.getElementById('reset-layout').addEventListener('click', function() {
                 sessionStorage.clear();
                 window.location.reload();
             });
@@ -1389,27 +1377,28 @@ File: Main Js File
     init();
 
     var timeOutFunctionId;
-    function setResize(){
+
+    function setResize() {
         var currentLayout = document.documentElement.getAttribute("data-layout");
-        if(currentLayout !== "horizontal") {
-            if(document.getElementById("navbar-nav")) {
+        if (currentLayout !== "horizontal") {
+            if (document.getElementById("navbar-nav")) {
                 var simpleBar = new SimpleBar(document.getElementById("navbar-nav"));
-                if(simpleBar)
+                if (simpleBar)
                     simpleBar.getContentElement();
             }
 
-            if(document.getElementsByClassName("twocolumn-iconview")[0]) {
+            if (document.getElementsByClassName("twocolumn-iconview")[0]) {
                 var simpleBar1 = new SimpleBar(document.getElementsByClassName("twocolumn-iconview")[0]);
-                if(simpleBar1)
+                if (simpleBar1)
                     simpleBar1.getContentElement();
             }
             clearTimeout(timeOutFunctionId);
         }
     }
 
-    window.addEventListener('resize', function () {       
-        if(timeOutFunctionId)
-            clearTimeout(timeOutFunctionId);        
-        timeOutFunctionId = setTimeout(setResize, 2000);      
+    window.addEventListener('resize', function() {
+        if (timeOutFunctionId)
+            clearTimeout(timeOutFunctionId);
+        timeOutFunctionId = setTimeout(setResize, 2000);
     });
 })();

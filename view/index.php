@@ -1,16 +1,16 @@
 <?php include 'layouts/session.php'; ?>
 <?php include 'layouts/head-main.php'; ?>
-<!-- comentario por Alejandro Romero para probrar rama git -->
+
     <head>
         
-        <title>Dashboard | Velzon - Admin & Dashboard Template</title>
+    <title><?=$lang['t-Index']?></title>
         <?php include 'layouts/title-meta.php'; ?>
 
         <!-- jsvectormap css -->
-        <link href="assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/libs/jsvectormap/css/jsvectormap.min.css" rel="stylesheet" type="text/css" />
 
         <!--Swiper slider css-->
-        <link href="assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
+        <link href="../assets/libs/swiper/swiper-bundle.min.css" rel="stylesheet" type="text/css" />
 
         <?php include 'layouts/head-css.php'; ?>
 
@@ -35,11 +35,11 @@
                         <div class="row">
                             <div class="col-12">
                                 <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                                    <h4 class="mb-sm-0">Dashboard</h4>
+                                    <h4 class="mb-sm-0"><?=$lang["t-Dashboard"]?></h4>
                                     <div class="page-title-right">
                                         <ol class="breadcrumb m-0">
-                                            <li class="breadcrumb-item"><a href="javascript: void(0);">Dashboards</a></li>
-                                            <li class="breadcrumb-item active">Dashboard</li>
+                                            <li class="breadcrumb-item"><a href="javascript: void(0);"><?=$lang["t-Index"]?></a></li>
+                                            <li class="breadcrumb-item active"><?=$lang["t-Index"]?></li>
                                         </ol>
                                     </div>
 
@@ -334,7 +334,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="avatar-sm bg-light rounded p-1 me-2">
-                                                                                <img src="assets/images/products/img-1.png" alt="" class="img-fluid d-block" />
+                                                                                <img src="../assets/images/products/img-1.png" alt="" class="img-fluid d-block" />
                                                                             </div>
                                                                             <div>
                                                                                 <h5 class="fs-14 my-1"><a href="apps-ecommerce-product-details.php" class="text-reset">Branded T-Shirts</a></h5>
@@ -363,7 +363,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="avatar-sm bg-light rounded p-1 me-2">
-                                                                                <img src="assets/images/products/img-2.png" alt="" class="img-fluid d-block" />
+                                                                                <img src="../assets/images/products/img-2.png" alt="" class="img-fluid d-block" />
                                                                             </div>
                                                                             <div>
                                                                                 <h5 class="fs-14 my-1"><a href="apps-ecommerce-product-details.php" class="text-reset">Bentwood Chair</a></h5>
@@ -392,7 +392,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="avatar-sm bg-light rounded p-1 me-2">
-                                                                                <img src="assets/images/products/img-3.png" alt="" class="img-fluid d-block" />
+                                                                                <img src="../assets/images/products/img-3.png" alt="" class="img-fluid d-block" />
                                                                             </div>
                                                                             <div>
                                                                                 <h5 class="fs-14 my-1"><a href="apps-ecommerce-product-details.php" class="text-reset">Borosil Paper Cup</a></h5>
@@ -421,7 +421,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="avatar-sm bg-light rounded p-1 me-2">
-                                                                                <img src="assets/images/products/img-4.png" alt="" class="img-fluid d-block" />
+                                                                                <img src="../assets/images/products/img-4.png" alt="" class="img-fluid d-block" />
                                                                             </div>
                                                                             <div>
                                                                                 <h5 class="fs-14 my-1"><a href="apps-ecommerce-product-details.php" class="text-reset">One Seater Sofa</a></h5>
@@ -450,7 +450,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="avatar-sm bg-light rounded p-1 me-2">
-                                                                                <img src="assets/images/products/img-5.png" alt="" class="img-fluid d-block" />
+                                                                                <img src="../assets/images/products/img-5.png" alt="" class="img-fluid d-block" />
                                                                             </div>
                                                                             <div>
                                                                                 <h5 class="fs-14 my-1"><a href="apps-ecommerce-product-details.php" class="text-reset">Stillbird Helmet</a></h5>
@@ -533,7 +533,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="flex-shrink-0 me-2">
-                                                                                <img src="assets/images/companies/img-1.png" alt="" class="avatar-sm p-2" />
+                                                                                <img src="../assets/images/companies/img-1.png" alt="" class="avatar-sm p-2" />
                                                                             </div>
                                                                             <div>
                                                                                 <h5 class="fs-14 my-1 fw-medium"><a href="apps-ecommerce-seller-details.php" class="text-reset">iTest Factory</a></h5>
@@ -559,7 +559,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="flex-shrink-0 me-2">
-                                                                                <img src="assets/images/companies/img-2.png" alt="" class="avatar-sm p-2" />
+                                                                                <img src="../assets/images/companies/img-2.png" alt="" class="avatar-sm p-2" />
                                                                             </div>
                                                                             <div class="flex-grow-1">
                                                                                 <h5 class="fs-14 my-1 fw-medium"><a href="apps-ecommerce-seller-details.php" class="text-reset">Digitech Galaxy</a></h5>
@@ -585,7 +585,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="flex-shrink-0 me-2">
-                                                                                <img src="assets/images/companies/img-3.png" alt="" class="avatar-sm p-2" />
+                                                                                <img src="../assets/images/companies/img-3.png" alt="" class="avatar-sm p-2" />
                                                                             </div>
                                                                             <div class="flex-gow-1">
                                                                                 <h5 class="fs-14 my-1 fw-medium"><a href="apps-ecommerce-seller-details.php" class="text-reset">Nesta Technologies</a></h5>
@@ -611,7 +611,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="flex-shrink-0 me-2">
-                                                                                <img src="assets/images/companies/img-8.png" alt="" class="avatar-sm p-2" />
+                                                                                <img src="../assets/images/companies/img-8.png" alt="" class="avatar-sm p-2" />
                                                                             </div>
                                                                             <div class="flex-grow-1">
                                                                                 <h5 class="fs-14 my-1 fw-medium"><a href="apps-ecommerce-seller-details.php" class="text-reset">Zoetic Fashion</a></h5>
@@ -637,7 +637,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="flex-shrink-0 me-2">
-                                                                                <img src="assets/images/companies/img-5.png" alt="" class="avatar-sm p-2" />
+                                                                                <img src="../assets/images/companies/img-5.png" alt="" class="avatar-sm p-2" />
                                                                             </div>
                                                                             <div class="flex-grow-1">
                                                                                 <h5 class="fs-14 my-1 fw-medium"><a href="apps-ecommerce-seller-details.php" class="text-reset">Meta4Systems</a></h5>
@@ -750,7 +750,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="flex-shrink-0 me-2">
-                                                                                <img src="assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle shadow" />
+                                                                                <img src="../assets/images/users/avatar-1.jpg" alt="" class="avatar-xs rounded-circle shadow" />
                                                                             </div>
                                                                             <div class="flex-grow-1">Alex Smith</div>
                                                                         </div>
@@ -774,7 +774,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="flex-shrink-0 me-2">
-                                                                                <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle shadow" />
+                                                                                <img src="../assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle shadow" />
                                                                             </div>
                                                                             <div class="flex-grow-1">Jansh Brown</div>
                                                                         </div>
@@ -798,7 +798,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="flex-shrink-0 me-2">
-                                                                                <img src="assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded-circle shadow" />
+                                                                                <img src="../assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded-circle shadow" />
                                                                             </div>
                                                                             <div class="flex-grow-1">Ayaan Bowen</div>
                                                                         </div>
@@ -822,7 +822,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="flex-shrink-0 me-2">
-                                                                                <img src="assets/images/users/avatar-4.jpg" alt="" class="avatar-xs rounded-circle shadow" />
+                                                                                <img src="../assets/images/users/avatar-4.jpg" alt="" class="avatar-xs rounded-circle shadow" />
                                                                             </div>
                                                                             <div class="flex-grow-1">Prezy Mark</div>
                                                                         </div>
@@ -846,7 +846,7 @@
                                                                     <td>
                                                                         <div class="d-flex align-items-center">
                                                                             <div class="flex-shrink-0 me-2">
-                                                                                <img src="assets/images/users/avatar-6.jpg" alt="" class="avatar-xs rounded-circle shadow" />
+                                                                                <img src="../assets/images/users/avatar-6.jpg" alt="" class="avatar-xs rounded-circle shadow" />
                                                                             </div>
                                                                             <div class="flex-grow-1">Vihan Hudda</div>
                                                                         </div>
@@ -908,13 +908,13 @@
                                                             <p class="text-muted mb-1">By Nesta Technologies</p>
                                                             <div class="d-inline-flex gap-2 border border-dashed p-2 mb-2">
                                                                 <a href="apps-ecommerce-product-details.php" class="bg-light rounded p-1">
-                                                                    <img src="assets/images/products/img-8.png" alt="" class="img-fluid d-block" />
+                                                                    <img src="../assets/images/products/img-8.png" alt="" class="img-fluid d-block" />
                                                                 </a>
                                                                 <a href="apps-ecommerce-product-details.php" class="bg-light rounded p-1">
-                                                                    <img src="assets/images/products/img-2.png" alt="" class="img-fluid d-block" />
+                                                                    <img src="../assets/images/products/img-2.png" alt="" class="img-fluid d-block" />
                                                                 </a>
                                                                 <a href="apps-ecommerce-product-details.php" class="bg-light rounded p-1">
-                                                                    <img src="assets/images/products/img-10.png" alt="" class="img-fluid d-block" />
+                                                                    <img src="../assets/images/products/img-10.png" alt="" class="img-fluid d-block" />
                                                                 </a>
                                                             </div>
                                                             <p class="mb-0 text-muted"><small>9:47 PM Yesterday</small></p>
@@ -922,7 +922,7 @@
                                                     </div>
                                                     <div class="acitivity-item py-3 d-flex">
                                                         <div class="flex-shrink-0">
-                                                            <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
+                                                            <img src="../assets/images/users/avatar-2.jpg" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow">
                                                         </div>
                                                         <div class="flex-grow-1 ms-3">
                                                             <h6 class="mb-1 lh-base">Natasha Carey have liked the products</h6>
@@ -988,7 +988,7 @@
                                                     </div>
                                                     <div class="acitivity-item d-flex">
                                                         <div class="flex-shrink-0">
-                                                            <img src="assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow" />
+                                                            <img src="../assets/images/users/avatar-3.jpg" alt="" class="avatar-xs rounded-circle acitivity-avatar shadow" />
                                                         </div>
                                                         <div class="flex-grow-1 ms-3">
                                                             <h6 class="mb-1 lh-base">Frank Hook Commented</h6>
@@ -1049,7 +1049,7 @@
                                                                     <div class="d-flex">
                                                                         <div class="flex-shrink-0 avatar-sm">
                                                                             <div class="avatar-title bg-light rounded shadow">
-                                                                                <img src="assets/images/companies/img-1.png" alt="" height="30">
+                                                                                <img src="../assets/images/companies/img-1.png" alt="" height="30">
                                                                             </div>
                                                                         </div>
                                                                         <div class="flex-grow-1 ms-3">
@@ -1076,7 +1076,7 @@
                                                                 <div class="card-body">
                                                                     <div class="d-flex">
                                                                         <div class="flex-shrink-0">
-                                                                            <img src="assets/images/users/avatar-3.jpg" alt="" class="avatar-sm rounded shadow">
+                                                                            <img src="../assets/images/users/avatar-3.jpg" alt="" class="avatar-sm rounded shadow">
                                                                         </div>
                                                                         <div class="flex-grow-1 ms-3">
                                                                             <div>
@@ -1103,7 +1103,7 @@
                                                                     <div class="d-flex">
                                                                         <div class="flex-shrink-0 avatar-sm">
                                                                             <div class="avatar-title bg-light rounded shadow">
-                                                                                <img src="assets/images/companies/img-8.png" alt="" height="30">
+                                                                                <img src="../assets/images/companies/img-8.png" alt="" height="30">
                                                                             </div>
                                                                         </div>
                                                                         <div class="flex-grow-1 ms-3">
@@ -1130,7 +1130,7 @@
                                                                 <div class="card-body">
                                                                     <div class="d-flex">
                                                                         <div class="flex-shrink-0">
-                                                                            <img src="assets/images/users/avatar-2.jpg" alt="" class="avatar-sm rounded shadow">
+                                                                            <img src="../assets/images/users/avatar-2.jpg" alt="" class="avatar-sm rounded shadow">
                                                                         </div>
                                                                         <div class="flex-grow-1 ms-3">
                                                                             <div>
@@ -1287,7 +1287,7 @@
 
                                             <div class="card sidebar-alert bg-light border-0 text-center mx-4 mb-0 mt-3">
                                                 <div class="card-body">
-                                                    <img src="assets/images/giftbox.png" alt="">
+                                                    <img src="../assets/images/giftbox.png" alt="">
                                                     <div class="mt-4">
                                                         <h5>Invite New Seller</h5>
                                                         <p class="text-muted lh-base">Refer a new seller to us and earn $100 per refer.</p>
@@ -1322,20 +1322,20 @@
         <?php include 'layouts/vendor-scripts.php'; ?>
 
         <!-- apexcharts -->
-        <script src="assets/libs/apexcharts/apexcharts.min.js"></script>
+        <script src="../assets/libs/apexcharts/apexcharts.min.js"></script>
 
         <!-- Vector map-->
-        <script src="assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
-        <script src="assets/libs/jsvectormap/maps/world-merc.js"></script>
+        <script src="../assets/libs/jsvectormap/js/jsvectormap.min.js"></script>
+        <script src="../assets/libs/jsvectormap/maps/world-merc.js"></script>
 
         <!--Swiper slider js-->
-        <script src="assets/libs/swiper/swiper-bundle.min.js"></script>
+        <script src="../assets/libs/swiper/swiper-bundle.min.js"></script>
         
         <!-- Dashboard init -->
-        <script src="assets/js/pages/dashboard-ecommerce.init.js"></script>
+        <script src="../assets/js/pages/dashboard-ecommerce.init.js"></script>
 
         <!-- App js -->
-        <script src="assets/js/app.js"></script>
+        <script src="../assets/js/app.js"></script>
     </body>
 
 </html>

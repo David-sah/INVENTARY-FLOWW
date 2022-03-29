@@ -31,7 +31,7 @@
             <div id="two-column-menu">
             </div>
             <ul class="navbar-nav" id="navbar-nav">
-                <li class="menu-title"><span ><?=$lang['t-menu']?></span></li>
+                <li class="menu-title"><span><?=$lang['t-menu']?></span></li>
                 <li class="nav-item">
                     <a class="nav-link menu-link" href="ventas.php">
                         <i class="mdi mdi-puzzle-outline"></i> <span ><?=$lang['t-ventas']?></span>
