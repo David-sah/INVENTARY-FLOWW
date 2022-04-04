@@ -3,8 +3,10 @@
 
 <head>
 
-    <title><?= $lang['t-sucursal'] ?></title>
+    <title><?= $lang['t-categoria'] ?></title>
     <?php include 'layouts/title-meta.php'; ?>
+    <!-- Sweet Alert css-->
+    <link href="assets/libs/sweetalert2/sweetalert2.min.css" rel="stylesheet" type="text/css" />
 
     <?php include 'layouts/head-css.php'; ?>
 
@@ -29,11 +31,11 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0">Lista de Sucursales</h4>
+                            <h4 class="mb-sm-0">Lista de Categorias</h4>
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Menu</a></li>
-                                    <li class="breadcrumb-item active">Sucursales</li>
+                                    <li class="breadcrumb-item active">Categorias</li>
                                 </ol>
                             </div>
 
@@ -46,7 +48,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title mb-0">Lista de Sucursales</h4>
+                                <h4 class="card-title mb-0">Lista de Categorias</h4>
                             </div><!-- end card header -->
 
                             <div class="card-body">
@@ -62,7 +64,6 @@
                                                 <button type="button" class="btn btn-success add-btn" data-bs-toggle="modal" id="create-btn" data-bs-target="#showModal">
                                                     <i class=" ri-printer-line align-center" style="font-size: 16px"></i>
                                                 </button>
-                                            
                                         </div>
                                         <div class="col-sm">
                                             <div class="d-flex justify-content-sm-end">
@@ -409,7 +410,7 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header bg-light p-3">
-                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                <h5 class="modal-title" id="exampleModlLabel">Agregar categoria</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
                             </div>
                             <form>
@@ -421,12 +422,12 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="customername-field" class="form-label">Customer Name</label>
+                                        <label for="customername-field" class="form-label">Nombre</label>
                                         <input type="text" id="customername-field" class="form-control" placeholder="Enter Name" required />
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="email-field" class="form-label">Email</label>
+                                        <label for="email-field" class="form-label">Descripción</label>
                                         <input type="email" id="email-field" class="form-control" placeholder="Enter Email" required />
                                     </div>
 
@@ -454,6 +455,8 @@
                                         <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
                                         <button type="submit" class="btn btn-success" id="add-btn">Add Customer</button>
                                         <button type="button" class="btn btn-success" id="edit-btn">Update</button>
+                                        <button type="button" class="btn btn-primary btn-sm" id="sa-success">Click me</button>
+                                        <button type="button" class="btn btn-primary btn-sm" id="sa-error">Sweet alert wrong</button>
                                     </div>
                                 </div>
                             </form>
@@ -499,6 +502,26 @@
 <!-- END layout-wrapper -->
 
 
+<!--start back-to-top-->
+<button onclick="topFunction()" class="btn btn-danger btn-icon" id="back-to-top">
+    <i class="ri-arrow-up-line"></i>
+</button>
+<!--end back-to-top-->
+<script>
+    var mybutton = document.getElementById("back-to-top");
+
+    function topFunction() {
+        document.body.scrollTop = 0, document.documentElement.scrollTop = 0
+    }
+    window.onscroll = function() {
+        scrollFunction()
+    };
+
+    function scrollFunction() {
+        100 < document.body.scrollTop || 100 < document.documentElement.scrollTop ? mybutton.style.display = "block" : mybutton.style.display = "none"
+    }
+</script>
+
 <!-- CUSTOMIZER THEME  -->
 <!-- <?php include 'layouts/customizer.php'; ?> -->
 
@@ -508,6 +531,11 @@
 <script src="assets/libs/list.js/list.min.js"></script>
 <script src="assets/libs/list.pagination.js/list.pagination.min.js"></script>
 
+<!-- Sweet Alerts js -->
+<script src="assets/libs/sweetalert2/sweetalert2.min.js"></script>
+
+<!-- Sweet alert init js-->
+<script src="assets/js/pages/sweetalerts.init.js"></script>
 <!-- listjs init -->
 <script src="assets/js/pages/listjs.init.js"></script>
 

@@ -4,7 +4,21 @@
     $lang["t-proveedor"]="Proveedores";
     $lang["t-sucursal"]="Sucursales";
     $lang["t-producto"]="Productos";
+    $lang["t-sucursal"]="Sucursales";
     $lang["t-empleado"]="Empleados";
+    $lang["t-categoria"]="Categorias";
+
+    $lang["t-vertodos"]="Ver todos";
+
+    ///index
+
+    $lang["t-topproductos"]="Top productos";
+    $lang["t-topproveedores"]="Top proveedores";
+    $lang["t-ordenarpor"]="Ordenar por";
+
+    
+
+
     
     $lang["t-menu"]="Menu";
     $lang["t-dashboards"]="Dashboards";

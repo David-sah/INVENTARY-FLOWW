@@ -524,8 +524,8 @@
         <!-- END layout-wrapper -->
 
         
-
-        <?php include 'layouts/customizer.php'; ?>
+        <!-- CUSTOMIZER THEME  -->
+        <!-- <?php include 'layouts/customizer.php'; ?> -->
 
         <?php include 'layouts/vendor-scripts.php'; ?>
         <!-- prismjs plugin -->

@@ -1,6 +1,21 @@
 <?php
-    $lang["t-compra"]="Compras";
-    
+    $lang["t-compras"]="Compras";
+    $lang["t-ventas"]="Ventas";
+    $lang["t-proveedor"]="Proveedores";
+    $lang["t-sucursal"]="Sucursales";
+    $lang["t-producto"]="Productos";
+    $lang["t-sucursal"]="Sucursales";
+    $lang["t-empleado"]="Empleados";
+    $lang["t-categoria"]="Categorias";
+
+    $lang["t-vertodos"]="Ver todos";
+
+    ///index
+
+    $lang["t-topproductos"]="Top productos";
+    $lang["t-topproveedores"]="Top proveedores";
+    $lang["t-ordenarpor"]="Ordenar por";
+
     
     $lang["t-menu"]="Menú";
     $lang["t-dashboards"]="Tableros";
