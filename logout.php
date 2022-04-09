@@ -56,7 +56,7 @@
                                         <h5>Has salido</h5>
                                         <p class="text-muted">Vuelve pronto</p>
                                         <div class="mt-4">
-                                            <a href="auth-signin-basic.php" class="btn btn-success w-100">Iniciar sesión</a>
+                                            <a href="login.php" class="btn btn-success w-100">Iniciar sesión</a>
                                         </div>
                                     </div>
                                 </div>

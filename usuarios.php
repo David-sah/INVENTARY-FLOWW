@@ -78,8 +78,8 @@
                                             <thead class="table-light">
                                                 <tr>
                                                     <th scope="col" style="width: 50px;">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="checkAll" value="option">
+                                                    <div class="hstack flex-wrap gap-2">
+                                                            <input class="form-check-input" type="checkbox" id="checkAll" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccionar todas" value="option">
                                                         </div>
                                                     </th>
                                                     <th class="sort" data-sort="customer_name">Customer</th>
@@ -408,7 +408,7 @@
                     <div class="modal-dialog modal-dialog-centered">
                         <div class="modal-content">
                             <div class="modal-header bg-light p-3">
-                                <h5 class="modal-title" id="exampleModalLabel"></h5>
+                                <h5 class="modal-title" id="">Agregar Empleado</h5>
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close" id="close-modal"></button>
                             </div>
                             <form>
@@ -420,7 +420,7 @@
                                     </div>
 
                                     <div class="mb-3">
-                                        <label for="customername-field" class="form-label">Customer Name</label>
+                                        <label for="customername-field" class="form-label">Nombre</label>
                                         <input type="text" id="customername-field" class="form-control" placeholder="Enter Name" required />
                                     </div>
 
@@ -432,6 +432,14 @@
                                     <div class="mb-3">
                                         <label for="phone-field" class="form-label">Phone</label>
                                         <input type="text" id="phone-field" class="form-control" placeholder="Enter Phone no." required />
+                                    </div>
+                                    <div class="mb-3">
+                                    <label for="tipoemp-field" class="form-label">Tipo</label>
+                                        <select class="form-select mb-3" id="tipoemp-field" aria-label="Default select example">
+                                            <option disabled selected>Open this select menu</option>
+                                            <option value="1">Administrador</option>
+                                            <option value="2">Gerente</option>
+                                        </select>
                                     </div>
 
                                     <div class="mb-3">

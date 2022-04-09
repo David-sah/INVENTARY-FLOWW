@@ -79,8 +79,8 @@
                                             <thead class="table-light">
                                                 <tr>
                                                     <th scope="col" style="width: 50px;">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="checkAll" value="option">
+                                                    <div class="hstack flex-wrap gap-2">
+                                                            <input class="form-check-input" type="checkbox" id="checkAll" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccionar todas" value="option">
                                                         </div>
                                                     </th>
                                                     <th class="sort" data-sort="customer_name">Customer</th>

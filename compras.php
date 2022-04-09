@@ -55,8 +55,8 @@
                                         <h4 class=" mb-0">$<span class="counter-value" data-target="2390.68">0</span></h4>
                                     </div>
                                     <div class="flex-shrink-0 align-self-end">
-                                        <span class="badge badge-soft-success"><i class="ri-arrow-up-s-fill align-middle me-1"></i>6.24 %<span>
-                                            </span></span>
+                                        <!-- <span class="badge badge-soft-success"><i class="ri-arrow-up-s-fill align-middle me-1"></i>6.24 %<span> -->
+                                        </span></span>
                                     </div>
                                 </div>
                             </div><!-- end card body -->
@@ -68,7 +68,7 @@
                                 <div class="d-flex align-items-center">
                                     <div class="avatar-sm flex-shrink-0">
                                         <span class="avatar-title bg-light text-primary rounded-circle shadow fs-3">
-                                            <i class="ri-arrow-up-circle-fill align-middle"></i>
+                                            <i class="ri-arrow-right-circle-fill align-middle"></i>
                                         </span>
                                     </div>
                                     <div class="flex-grow-1 ms-3">
@@ -76,8 +76,8 @@
                                         <h4 class=" mb-0"><span class="counter-value" data-target="10">0</span></h4>
                                     </div>
                                     <div class="flex-shrink-0 align-self-end">
-                                        <span class="badge badge-soft-success"><i class="ri-arrow-up-s-fill align-middle me-1"></i>3.67 %<span>
-                                            </span></span>
+                                        <!-- <span class="badge badge-soft-success"><i class="ri-arrow-up-s-fill align-middle me-1"></i>3.67 %<span> -->
+                                        </span></span>
                                     </div>
                                 </div>
                             </div><!-- end card body -->
@@ -120,8 +120,8 @@
                                             <thead class="table-light">
                                                 <tr>
                                                     <th scope="col" style="width: 50px;">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" id="checkAll" value="option">
+                                                        <div class="hstack flex-wrap gap-2">
+                                                            <input class="form-check-input" type="checkbox" id="checkAll" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccionar todas" value="option">
                                                         </div>
                                                     </th>
                                                     <th class="sort" data-sort="customer_name">Customer</th>
