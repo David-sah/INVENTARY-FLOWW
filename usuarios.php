@@ -3,7 +3,7 @@
 
 <head>
 
-    <title><?= $lang['t-empleado'] ?></title>
+    <title><?= $lang['t-ListOfEmployees'] ?></title>
     <?php include 'layouts/title-meta.php'; ?>
 
     <?php include 'layouts/head-css.php'; ?>
@@ -29,11 +29,11 @@
                 <div class="row">
                     <div class="col-12">
                         <div class="page-title-box d-sm-flex align-items-center justify-content-between">
-                            <h4 class="mb-sm-0">Lista de Empleados</h4>
+                            <h4 class="mb-sm-0"><?= $lang["t-ListOfEmployees"] ?></h4>
                             <div class="page-title-right">
                                 <ol class="breadcrumb m-0">
                                     <li class="breadcrumb-item"><a href="javascript: void(0);">Menu</a></li>
-                                    <li class="breadcrumb-item active">Empleados</li>
+                                    <li class="breadcrumb-item active"><?= $lang["t-ListOfEmployees"] ?></li>
                                 </ol>
                             </div>
 
@@ -46,7 +46,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4 class="card-title mb-0">Lista de Empleados</h4>
+                                <h4 class="card-title mb-0"><?= $lang["t-ListOfEmployees"] ?></h4>
                             </div><!-- end card header -->
 
                             <div class="card-body">
@@ -66,7 +66,7 @@
                                         <div class="col-sm">
                                             <div class="d-flex justify-content-sm-end">
                                                 <div class="search-box ms-2">
-                                                    <input type="text" class="form-control search" placeholder="Search...">
+                                                    <input type="text" class="form-control search" placeholder="<?= $lang["t-search"] ?>">
                                                     <i class="ri-search-line search-icon"></i>
                                                 </div>
                                             </div>
@@ -78,16 +78,16 @@
                                             <thead class="table-light">
                                                 <tr>
                                                     <th scope="col" style="width: 50px;">
-                                                    <div class="hstack flex-wrap gap-2">
+                                                        <div class="hstack flex-wrap gap-2">
                                                             <input class="form-check-input" type="checkbox" id="checkAll" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccionar todas" value="option">
                                                         </div>
                                                     </th>
-                                                    <th class="sort" data-sort="customer_name">Customer</th>
-                                                    <th class="sort" data-sort="email">Email</th>
-                                                    <th class="sort" data-sort="phone">Phone</th>
-                                                    <th class="sort" data-sort="date">Joining Date</th>
-                                                    <th class="sort" data-sort="status">Delivery Status</th>
-                                                    <th class="sort" data-sort="action">Action</th>
+                                                    <th class="sort" data-sort="customer_name"><?= $lang["t-Customer"] ?></th>
+                                                    <th class="sort" data-sort="email"><?= $lang["t-Email"] ?></th>
+                                                    <th class="sort" data-sort="phone"><?= $lang["t-Phone"] ?></th>
+                                                    <th class="sort" data-sort="date"><?= $lang["t-JoiningDate"] ?></th>
+                                                    <th class="sort" data-sort="status"><?= $lang["t-DeliveryStatus"] ?></th>
+                                                    <th class="sort" data-sort="action"><?= $lang["t-Action"] ?></th>
                                                 </tr>
                                             </thead>
                                             <tbody class="list form-check-all">
@@ -102,87 +102,19 @@
                                                     <td class="email">marycousar@velzon.com</td>
                                                     <td class="phone">580-464-4694</td>
                                                     <td class="date">06 Apr, 2021</td>
-                                                    <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>
+                                                    <td class="status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
                                                     <td>
                                                         <div class="d-flex gap-2">
                                                             <div class="edit">
-                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
+                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
                                                             </div>
                                                             <div class="remove">
-                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
+                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
                                                             </div>
                                                         </div>
                                                     </td>
                                                 </tr>
-                                                <tr>
-                                                    <th scope="row">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" name="checkAll" value="option2">
-                                                        </div>
-                                                    </th>
-                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2102</a></td>
-                                                    <td class="customer_name">Jeff Taylor</td>
-                                                    <td class="email">jefftaylor@velzon.com</td>
-                                                    <td class="phone">863-577-5537</td>
-                                                    <td class="date">15 Feb, 2021</td>
-                                                    <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>
-                                                    <td>
-                                                        <div class="d-flex gap-2">
-                                                            <div class="edit">
-                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
-                                                            </div>
-                                                            <div class="remove">
-                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" name="checkAll" value="option3">
-                                                        </div>
-                                                    </th>
-                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2103</a></td>
-                                                    <td class="customer_name">Robert McMahon</td>
-                                                    <td class="email">robertmcmahon@velzon.com</td>
-                                                    <td class="phone">786-253-9927</td>
-                                                    <td class="date">12 Jan, 2021</td>
-                                                    <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>
-                                                    <td>
-                                                        <div class="d-flex gap-2">
-                                                            <div class="edit">
-                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
-                                                            </div>
-                                                            <div class="remove">
-                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <th scope="row">
-                                                        <div class="form-check">
-                                                            <input class="form-check-input" type="checkbox" name="checkAll" value="option4">
-                                                        </div>
-                                                    </th>
-                                                    <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2104</a></td>
-                                                    <td class="customer_name">Michael Morris</td>
-                                                    <td class="email">michaelmorris@velzon.com</td>
-                                                    <td class="phone">805-447-8398</td>
-                                                    <td class="date">19 May, 2021</td>
-                                                    <td class="status"><span class="badge badge-soft-danger text-uppercase">Block</span></td>
-                                                    <td>
-                                                        <div class="d-flex gap-2">
-                                                            <div class="edit">
-                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
-                                                            </div>
-                                                            <div class="remove">
-                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
-                                                            </div>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+
                                                 <tr>
                                                     <th scope="row">
                                                         <div class="form-check">
@@ -194,14 +126,14 @@
                                                     <td class="email">kevindawson@velzon.com</td>
                                                     <td class="phone">213-741-4294</td>
                                                     <td class="date">14 Apr, 2021</td>
-                                                    <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>
+                                                    <td class="status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
                                                     <td>
                                                         <div class="d-flex gap-2">
                                                             <div class="edit">
-                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
+                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
                                                             </div>
                                                             <div class="remove">
-                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
+                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -217,14 +149,14 @@
                                                     <td class="email">carolynjones@velzon.com</td>
                                                     <td class="phone">414-453-5725</td>
                                                     <td class="date">07 Jun, 2021</td>
-                                                    <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>
+                                                    <td class="status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
                                                     <td>
                                                         <div class="d-flex gap-2">
                                                             <div class="edit">
-                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
+                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
                                                             </div>
                                                             <div class="remove">
-                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
+                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -240,14 +172,14 @@
                                                     <td class="email">glenmatney@velzon.com</td>
                                                     <td class="phone">515-395-1069</td>
                                                     <td class="date">02 Nov, 2021</td>
-                                                    <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>
+                                                    <td class="status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
                                                     <td>
                                                         <div class="d-flex gap-2">
                                                             <div class="edit">
-                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
+                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
                                                             </div>
                                                             <div class="remove">
-                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
+                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -263,14 +195,14 @@
                                                     <td class="email">charleskubik@velzon.com</td>
                                                     <td class="phone">231-480-8536</td>
                                                     <td class="date">25 Sep, 2021</td>
-                                                    <td class="status"><span class="badge badge-soft-danger text-uppercase">Block</span></td>
+                                                    <td class="status"><span class="badge badge-soft-danger text-uppercase"><?= $lang["t-Block"] ?></span></td>
                                                     <td>
                                                         <div class="d-flex gap-2">
                                                             <div class="edit">
-                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
+                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
                                                             </div>
                                                             <div class="remove">
-                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
+                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -286,14 +218,14 @@
                                                     <td class="email">herbertstokes@velzon.com</td>
                                                     <td class="phone">312-944-1448</td>
                                                     <td class="date">20 Jul, 2021</td>
-                                                    <td class="status"><span class="badge badge-soft-danger text-uppercase">Block</span></td>
+                                                    <td class="status"><span class="badge badge-soft-danger text-uppercase"><?= $lang["t-Block"] ?></span></td>
                                                     <td>
                                                         <div class="d-flex gap-2">
                                                             <div class="edit">
-                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
+                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
                                                             </div>
                                                             <div class="remove">
-                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
+                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -309,14 +241,14 @@
                                                     <td class="email">timothysmith@velzon.com</td>
                                                     <td class="phone">973-277-6950</td>
                                                     <td class="date">13 Dec, 2021</td>
-                                                    <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>
+                                                    <td class="status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
                                                     <td>
                                                         <div class="d-flex gap-2">
                                                             <div class="edit">
-                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
+                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
                                                             </div>
                                                             <div class="remove">
-                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
+                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -332,14 +264,14 @@
                                                     <td class="email">johnnyevans@velzon.com</td>
                                                     <td class="phone">407-645-1767</td>
                                                     <td class="date">01 Oct, 2021</td>
-                                                    <td class="status"><span class="badge badge-soft-danger text-uppercase">Block</span></td>
+                                                    <td class="status"><span class="badge badge-soft-danger text-uppercase"><?= $lang["t-Block"] ?></span></td>
                                                     <td>
                                                         <div class="d-flex gap-2">
                                                             <div class="edit">
-                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
+                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
                                                             </div>
                                                             <div class="remove">
-                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
+                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -355,14 +287,14 @@
                                                     <td class="email">kevindawson@velzon.com</td>
                                                     <td class="phone">213-741-4294</td>
                                                     <td class="date">14 Apr, 2021</td>
-                                                    <td class="status"><span class="badge badge-soft-success text-uppercase">Active</span></td>
+                                                    <td class="status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
                                                     <td>
                                                         <div class="d-flex gap-2">
                                                             <div class="edit">
-                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal">Edit</button>
+                                                                <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
                                                             </div>
                                                             <div class="remove">
-                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">Remove</button>
+                                                                <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
                                                             </div>
                                                         </div>
                                                     </td>
@@ -383,11 +315,11 @@
                                     <div class="d-flex justify-content-end">
                                         <div class="pagination-wrap hstack gap-2">
                                             <a class="page-item pagination-prev disabled" href="#">
-                                                Previous
+                                            <?= $lang["t-Previous"] ?>
                                             </a>
                                             <ul class="pagination listjs-pagination mb-0"></ul>
                                             <a class="page-item pagination-next" href="#">
-                                                Next
+                                            <?= $lang["t-Next"] ?>
                                             </a>
                                         </div>
                                     </div>

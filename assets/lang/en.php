@@ -8,9 +8,41 @@
     $lang["t-empleado"]="Empleados";
     $lang["t-categoria"]="Categorias";
 
+
+    $lang["t-WebApps"] = "Web Apps";
+    $lang["t-ViewAllApps"] = "View All Apps";
+    $lang["t-Index"] = "Dashboard";
+    $lang["t-Dashboard"] = "DASHBOARD";
+    $lang["t-ListBuys"] = "Shopping List";
+    $lang["t-Add"] = "Add";
+    $lang["t-Print"] = "Print";
+    $lang["t-search"] = "Search...";
+    $lang["t-Customer"] = "Customer";
+    $lang["t-Email"] = "Email";
+    $lang["t-Phone"] = "Phone";
+    $lang["t-JoiningDate"] = "Joining Date";
+    $lang["t-DeliveryStatus"] = "Delivery Status";
+    $lang["t-Action"] = "Action";
+    $lang["t-Edit"] = "Edit";
+    $lang["t-Remove"] = "Remove";
+    $lang["t-Active"] = "Active";
+    $lang["t-Block"] = "Block";
+    $lang["t-Previous"] = "Previous";
+    $lang["t-Next"] = "Next";
+
     $lang["t-vertodos"]="Ver todos";
 
-    ///index
+
+
+    $lang["t-SellList"] = "Sale List";
+    $lang["t-ListOfSuppliers"] = "List Of Suppliers";
+    $lang["t-BranchList"] = "Branch List";
+    $lang["t-ListOfProducts"] = "List Of Products";
+    $lang["t-ListOfEmployees"] = "List Of Employees";
+    $lang["t-ListOfCategory"] = "List Of Category";
+
+    ///index actualizado dav
+
 
     $lang["t-topproductos"]="Top productos";
     $lang["t-topproveedores"]="Top proveedores";
