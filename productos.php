@@ -46,7 +46,7 @@
                     <div class="col-lg-12">
                         <div class="card">
                             <div class="card-body">
-                                <div id="customerList">
+                                <div id="productsList">
                                     <div class="row">
                                         <div class="col-lg-12">
                                             <div class="card">
@@ -55,7 +55,7 @@
                                                 </div><!-- end card header -->
 
                                                 <div class="card-body">
-                                                    <div id="customerList">
+                                                    <div id="productsList">
                                                         <div class="row g-4 mb-3">
                                                             <div class="col-sm-auto">
                                                                 <button type="button" class="btn btndel remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal">
@@ -79,7 +79,8 @@
                                                         </div>
 
                                                         <div class="table-responsive table-card mt-3 mb-1">
-                                                            <table class="table align-middle table-nowrap" id="customerTable">
+                                                            <table class="table align-middle table-nowrap" id="productsTable">
+                                                                <!--id="customerTable"-->
                                                                 <thead class="table-light">
                                                                     <tr>
                                                                         <th scope="col" style="width: 50px;">
@@ -87,12 +88,13 @@
                                                                                 <input class="form-check-input" type="checkbox" id="checkAll" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccionar todas" value="option">
                                                                             </div>
                                                                         </th>
-                                                                        <th class="sort" data-sort="customer_name"><?= $lang["t-Customer"] ?></th>
-                                                                        <th class="sort" data-sort="email"><?= $lang["t-Email"] ?></th>
-                                                                        <th class="sort" data-sort="phone"><?= $lang["t-Phone"] ?></th>
-                                                                        <th class="sort" data-sort="date"><?= $lang["t-JoiningDate"] ?></th>
-                                                                        <th class="sort" data-sort="status"><?= $lang["t-DeliveryStatus"] ?></th>
-                                                                        <th class="sort" data-sort="action"><?= $lang["t-Action"] ?></th>
+                                                                        <th class="sort" data-sort="products_name"><?= $lang["t-products"] ?></th>
+                                                                        <th class="sort" data-sort="Mark"><?= $lang["t-Mark"] ?></th>
+                                                                        <th class="sort" data-sort="Model"><?= $lang["t-Model"] ?></th>
+                                                                        <th class="sort" data-sort="Descontinuado"><?= $lang["t-Discontinued"] ?></th>
+                                                                        <th class="sort" data-sort="Note"><?= $lang["t-Note"] ?></th>
+                                                                        <th class="sort" data-sort="Status"><?= $lang["t-Status"] ?></th>
+                                                                        <th class="sort" data-sort="Status"><?= $lang["t-Action"] ?></th>
                                                                     </tr>
                                                                 </thead>
                                                                 <tbody class="list form-check-all">
@@ -103,11 +105,540 @@
                                                                             </div>
                                                                         </th>
                                                                         <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
-                                                                        <td class="customer_name">Mary Cousar</td>
-                                                                        <td class="email">marycousar@velzon.com</td>
-                                                                        <td class="phone">580-464-4694</td>
-                                                                        <td class="date">06 Apr, 2021</td>
-                                                                        <td class="status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td class="products_name">Acordeón</td>
+                                                                        <td class="Mark">CASIO</td>
+                                                                        <td class="Model">FR-18</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">Acordeon Electronico</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Órgano</td>
+                                                                        <td class="Mark">CASIO</td>
+                                                                        <td class="Model">Celviano</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">De soplo mecánico</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Armonio</td>
+                                                                        <td class="Mark">CASIO</td>
+                                                                        <td class="Model"> palisandro 17DX</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">órgano portátil</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Flauta</td>
+                                                                        <td class="Mark">Yamaha </td>
+                                                                        <td class="Model">Sopranino</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – madera</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Clarinete</td>
+                                                                        <td class="Mark">Yamaha</td>
+                                                                        <td class="Model">Bb Bass</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – madera</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Corno inglés</td>
+                                                                        <td class="Mark">Roland</td>
+                                                                        <td class="Model">Corno</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – madera</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Chirimía</td>
+                                                                        <td class="Mark">Korg</td>
+                                                                        <td class="Model">George </td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – madera</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Dulzaina</td>
+                                                                        <td class="Mark">Korg</td>
+                                                                        <td class="Model">Paco Blasco</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – madera</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Saxofón</td>
+                                                                        <td class="Mark">Fender</td>
+                                                                        <td class="Model">Tenor</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – metal</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Serpentón</td>
+                                                                        <td class="Mark">Gibson</td>
+                                                                        <td class="Model">Antiguo</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – metal</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Trompeta</td>
+                                                                        <td class="Mark">Yamaha</td>
+                                                                        <td class="Model">Profesional</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – metal</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Trompeta</td>
+                                                                        <td class="Mark">STOMVI</td>
+                                                                        <td class="Model">Intermedio</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – metal</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Trompeta</td>
+                                                                        <td class="Mark">Fides</td>
+                                                                        <td class="Model">Principiantes</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – metal</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Trombón</td>
+                                                                        <td class="Mark">Eastman</td>
+                                                                        <td class="Model">ETB526</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – metal</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Trombón</td>
+                                                                        <td class="Mark">Jupiter</td>
+                                                                        <td class="Model">JSL1150FROQ</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – metal</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Trombón</td>
+                                                                        <td class="Mark">Courtois</td>
+                                                                        <td class="Model">AC280</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – metal</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Trombón</td>
+                                                                        <td class="Mark">Bach</td>
+                                                                        <td class="Model">TR450</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – metal</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Trombón</td>
+                                                                        <td class="Mark">Yamaha</td>
+                                                                        <td class="Model">YSL-448GE</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – metal</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Tuba</td>
+                                                                        <td class="Mark">Liverpool</td>
+                                                                        <td class="Model">Bombardino</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – metal</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Tuba</td>
+                                                                        <td class="Mark">Liverpool</td>
+                                                                        <td class="Model">Trombón</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – metal</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Tuba</td>
+                                                                        <td class="Mark">Roland</td>
+                                                                        <td class="Model">Wagner</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">viento – metal</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Batería</td>
+                                                                        <td class="Mark">Calcio</td>
+                                                                        <td class="Model">VRLA</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">percusión o idiófonos</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
+                                                                        <td>
+                                                                            <div class="d-flex gap-2">
+                                                                                <div class="edit">
+                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
+                                                                                </div>
+                                                                                <div class="remove">
+                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </td>
+                                                                    </tr>
+                                                                    <tr>
+                                                                        <th scope="row">
+                                                                            <div class="form-check">
+                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option1">
+                                                                            </div>
+                                                                        </th>
+                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2101</a></td>
+                                                                        <td class="products_name">Bateria</td>
+                                                                        <td class="Mark">Gibson</td>
+                                                                        <td class="Model">Voyager</td>
+                                                                        <td class="Descontinuado">No</td>
+                                                                        <td class="Note">percusión o idiófonos</td>
+                                                                        <td class="Status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
                                                                         <td>
                                                                             <div class="d-flex gap-2">
                                                                                 <div class="edit">
@@ -120,190 +651,7 @@
                                                                         </td>
                                                                     </tr>
 
-                                                                    <tr>
-                                                                        <th scope="row">
-                                                                            <div class="form-check">
-                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option5">
-                                                                            </div>
-                                                                        </th>
-                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2105</a></td>
-                                                                        <td class="customer_name">Kevin Dawson</td>
-                                                                        <td class="email">kevindawson@velzon.com</td>
-                                                                        <td class="phone">213-741-4294</td>
-                                                                        <td class="date">14 Apr, 2021</td>
-                                                                        <td class="status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
-                                                                        <td>
-                                                                            <div class="d-flex gap-2">
-                                                                                <div class="edit">
-                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
-                                                                                </div>
-                                                                                <div class="remove">
-                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">
-                                                                            <div class="form-check">
-                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option6">
-                                                                            </div>
-                                                                        </th>
-                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2106</a></td>
-                                                                        <td class="customer_name">Carolyn Jones</td>
-                                                                        <td class="email">carolynjones@velzon.com</td>
-                                                                        <td class="phone">414-453-5725</td>
-                                                                        <td class="date">07 Jun, 2021</td>
-                                                                        <td class="status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
-                                                                        <td>
-                                                                            <div class="d-flex gap-2">
-                                                                                <div class="edit">
-                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
-                                                                                </div>
-                                                                                <div class="remove">
-                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">
-                                                                            <div class="form-check">
-                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option7">
-                                                                            </div>
-                                                                        </th>
-                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2107</a></td>
-                                                                        <td class="customer_name">Glen Matney</td>
-                                                                        <td class="email">glenmatney@velzon.com</td>
-                                                                        <td class="phone">515-395-1069</td>
-                                                                        <td class="date">02 Nov, 2021</td>
-                                                                        <td class="status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
-                                                                        <td>
-                                                                            <div class="d-flex gap-2">
-                                                                                <div class="edit">
-                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
-                                                                                </div>
-                                                                                <div class="remove">
-                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">
-                                                                            <div class="form-check">
-                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option8">
-                                                                            </div>
-                                                                        </th>
-                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2108</a></td>
-                                                                        <td class="customer_name">Charles Kubik</td>
-                                                                        <td class="email">charleskubik@velzon.com</td>
-                                                                        <td class="phone">231-480-8536</td>
-                                                                        <td class="date">25 Sep, 2021</td>
-                                                                        <td class="status"><span class="badge badge-soft-danger text-uppercase"><?= $lang["t-Block"] ?></span></td>
-                                                                        <td>
-                                                                            <div class="d-flex gap-2">
-                                                                                <div class="edit">
-                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
-                                                                                </div>
-                                                                                <div class="remove">
-                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">
-                                                                            <div class="form-check">
-                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option9">
-                                                                            </div>
-                                                                        </th>
-                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2109</a></td>
-                                                                        <td class="customer_name">Herbert Stokes</td>
-                                                                        <td class="email">herbertstokes@velzon.com</td>
-                                                                        <td class="phone">312-944-1448</td>
-                                                                        <td class="date">20 Jul, 2021</td>
-                                                                        <td class="status"><span class="badge badge-soft-danger text-uppercase"><?= $lang["t-Block"] ?></span></td>
-                                                                        <td>
-                                                                            <div class="d-flex gap-2">
-                                                                                <div class="edit">
-                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
-                                                                                </div>
-                                                                                <div class="remove">
-                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">
-                                                                            <div class="form-check">
-                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option10">
-                                                                            </div>
-                                                                        </th>
-                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2110</a></td>
-                                                                        <td class="customer_name">Timothy Smith</td>
-                                                                        <td class="email">timothysmith@velzon.com</td>
-                                                                        <td class="phone">973-277-6950</td>
-                                                                        <td class="date">13 Dec, 2021</td>
-                                                                        <td class="status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
-                                                                        <td>
-                                                                            <div class="d-flex gap-2">
-                                                                                <div class="edit">
-                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
-                                                                                </div>
-                                                                                <div class="remove">
-                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">
-                                                                            <div class="form-check">
-                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option11">
-                                                                            </div>
-                                                                        </th>
-                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2111</a></td>
-                                                                        <td class="customer_name">Johnny Evans</td>
-                                                                        <td class="email">johnnyevans@velzon.com</td>
-                                                                        <td class="phone">407-645-1767</td>
-                                                                        <td class="date">01 Oct, 2021</td>
-                                                                        <td class="status"><span class="badge badge-soft-danger text-uppercase"><?= $lang["t-Block"] ?></span></td>
-                                                                        <td>
-                                                                            <div class="d-flex gap-2">
-                                                                                <div class="edit">
-                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
-                                                                                </div>
-                                                                                <div class="remove">
-                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <th scope="row">
-                                                                            <div class="form-check">
-                                                                                <input class="form-check-input" type="checkbox" name="checkAll" value="option12">
-                                                                            </div>
-                                                                        </th>
-                                                                        <td class="id" style="display:none;"><a href="javascript:void(0);" class="fw-medium link-primary">#VZ2112</a></td>
-                                                                        <td class="customer_name">Kevin Dawson</td>
-                                                                        <td class="email">kevindawson@velzon.com</td>
-                                                                        <td class="phone">213-741-4294</td>
-                                                                        <td class="date">14 Apr, 2021</td>
-                                                                        <td class="status"><span class="badge badge-soft-success text-uppercase"><?= $lang["t-Active"] ?></span></td>
-                                                                        <td>
-                                                                            <div class="d-flex gap-2">
-                                                                                <div class="edit">
-                                                                                    <button class="btn btn-sm btn-success edit-item-btn" data-bs-toggle="modal" data-bs-target="#showModal"><?= $lang["t-Edit"] ?></button>
-                                                                                </div>
-                                                                                <div class="remove">
-                                                                                    <button class="btn btn-sm btn-danger remove-item-btn" data-bs-toggle="modal" data-bs-target="#deleteRecordModal"><?= $lang["t-Remove"] ?></button>
-                                                                                </div>
-                                                                            </div>
-                                                                        </td>
-                                                                    </tr>
+
                                                                 </tbody>
                                                             </table>
                                                             <div class="noresult" style="display: none">
@@ -376,29 +724,29 @@
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="customername-field" class="form-label">Customer Name</label>
-                                    <input type="text" id="customername-field" class="form-control" placeholder="Enter Name" required />
+                                    <label for="productsname-field" class="form-label">products Name</label>
+                                    <input type="text" id="productsname-field" class="form-control" placeholder="Enter Name" required />
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="email-field" class="form-label">Email</label>
-                                    <input type="email" id="email-field" class="form-control" placeholder="Enter Email" required />
+                                    <label for="Mark-field" class="form-label">Mark</label>
+                                    <input type="Mark" id="Mark-field" class="form-control" placeholder="Enter Mark" required />
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="phone-field" class="form-label">Phone</label>
-                                    <input type="text" id="phone-field" class="form-control" placeholder="Enter Phone no." required />
+                                    <label for="Model-field" class="form-label">Model</label>
+                                    <input type="text" id="Model-field" class="form-control" placeholder="Enter Model no." required />
                                 </div>
 
                                 <div class="mb-3">
-                                    <label for="date-field" class="form-label">Joining Date</label>
-                                    <input type="text" id="date-field" class="form-control" placeholder="Select Date" required />
+                                    <label for="Descontinuado-field" class="form-label">Joining Descontinuado</label>
+                                    <input type="text" id="Descontinuado-field" class="form-control" placeholder="Select Descontinuado" required />
                                 </div>
 
                                 <div>
-                                    <label for="status-field" class="form-label">Status</label>
-                                    <select class="form-control" data-trigger name="status-field" id="status-field">
-                                        <option value="">Status</option>
+                                    <label for="Note-field" class="form-label">Note</label>
+                                    <select class="form-control" data-trigger name="Note-field" id="Note-field">
+                                        <option value="">Note</option>
                                         <option value="Active">Active</option>
                                         <option value="Block">Block</option>
                                     </select>
@@ -407,8 +755,8 @@
                             <div class="modal-footer">
                                 <div class="hstack gap-2 justify-content-end">
                                     <button type="button" class="btn btn-light" data-bs-dismiss="modal">Close</button>
-                                    <button type="submit" class="btn btn-success" id="add-btn">Add Customer</button>
-                                    <button type="button" class="btn btn-success" id="edit-btn">Update</button>
+                                    <button type="submit" class="btn btn-success" id="add-btn">Add products</button>
+                                    <button type="button" class="btn btn-success" id="edit-btn">UpDescontinuado</button>
                                 </div>
                             </div>
                         </form>
